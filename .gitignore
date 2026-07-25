@@ -1,0 +1,39 @@
+# Track: REPORT.md, _quarto.yml, reference.docx, build.ps1, init.ps1,
+#        patch-reference-docx.py, tools/, figures/, templates/, docs/,
+#        .specify/, requirements.txt, README.md, LICENSE, this file.
+# Everything else here is reproducible from those.
+
+# Quarto
+/_output/
+/.quarto/
+# delivery-named copies of the render
+/output/
+
+# Generated figures. Reproducible with figures/make_figures.py.
+/assets/
+
+# Backups written by patch-reference-docx.py
+*.bak
+
+# LaTeX build artifacts, if you add a PDF target
+*.tex
+*.log
+*.aux
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Generated chapter files — regenerated from REPORT.md by build.ps1 on every
+# run. Filenames are heading slugs, so this pattern covers any structure.
+# NOTE: templates/*/ contains no .qmd, so nothing there is caught by this.
+*.qmd
+
+**/*.quarto_ipynb
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

@@ -1,0 +1,19 @@
+# Python dependencies.
+#
+#     python -m pip install -r requirements.txt
+#
+# ONLY figure generation needs anything installed. Both of the other Python
+# entry points are standard-library-only and run on a bare interpreter:
+#
+#     tools/report-check.py       the nine integrity gates
+#     patch-reference-docx.py     Arial 11 + chapter page breaks
+#
+# So if you are writing and checking but not generating figures, skip this file
+# entirely.
+#
+# Quarto is a separate, non-Python prerequisite — see README.md.
+
+# figures/make_figures.py
+# Conservative floor; the script uses long-stable APIs. Capped below 4 because a
+# major version may rename or remove them.
+matplotlib>=3.7,<4
