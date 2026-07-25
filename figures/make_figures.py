@@ -108,7 +108,12 @@ for s in ('top', 'right', 'left'):
 ax.tick_params(length=3)
 ax.legend(frameon=False, fontsize=8.6, loc='lower right', ncol=2)
 
-fig.text(0.5, -0.10,
+# The caption sits below the x-axis label. With savefig.bbox='tight', both are
+# placed in figure coordinates and WILL overlap if the caption is too close —
+# the axis label and the first caption line land on top of each other and the
+# figure is unreadable. Leave enough clearance, and look at the PNG after any
+# change to either. This exact collision shipped once.
+fig.text(0.5, -0.17,
          'PLACEHOLDER — invented numbers, for layout only. Replace before use.\n'
          'Shortfalls against Objectives 2 and 4 are shown as shortfalls; explain each\n'
          'in the PROBLEMS part with a recommended solution, as the format requires.',
